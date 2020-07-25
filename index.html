@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Simple Screen Recorder</title>
+    <title>Screen Recorder</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="render.js"></script>
@@ -12,16 +12,23 @@
 <body class="content">
     <h1>Screen Recorder</h1>
 
-    <video></video>
 
-    <button id="startBtn" class="button is-primary">Start</button>
-    <button id="stopBtn" class="button is-warning">Stop</button>
-
-    <hr />
-
+    <div class="video-container">
+        <video>
+    
+        </video>
+    </div>
+    <div class="Btn-container">
+        <button id="startBtn" class="button is-primary">Record</button>
+        <button id="stopBtn" class="button is-warning">Stop</button>
+    </div>
     <button id="videoSelectBtn" class="button is-text">
-        Choose a Video Source
+        Select a Video Source
     </button>
+
+
+    <hr/>
+
 </body>
 
 </html>
