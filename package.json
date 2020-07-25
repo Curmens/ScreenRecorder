@@ -1,0 +1,14 @@
+{
+  "name": "screen-recorder",
+  "version": "1.0.0",
+  "description": "Electron Screen Recorder",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron"
+  },
+  "author": "Curtis",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.1.1"
+  }
+}
