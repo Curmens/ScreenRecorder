@@ -28,6 +28,7 @@ async function getVideoSources() {
 
 let mediaRecorder; // MediaRecorder instance to capture footage
 const recordedChunks = [];
+// const audioChunks = [];
 
 // Change the videoSource window to record
 async function selectSource(source) {
@@ -45,16 +46,21 @@ async function selectSource(source) {
         }
     };
 
+    const constraintsAudio ={audio: true}
+    
+    const audioStream = await navigator.mediaDevices.getUserMedia(constraintsAudio)
     // Create a Stream
-    const stream = await navigator.mediaDevices
-        .getUserMedia(constraints);
+    const videoStream = await navigator.mediaDevices.getUserMedia(constraints);
 
+    const stream = new MediaStream([...videoStream.getVideoTracks(), ...audioStream.getAudioTracks()])
+    
     // Preview the source in a video element
     videoElement.srcObject = stream;
+    videoElement.muted = true
     videoElement.play();
 
     // Create the Media Recorder
-    const options = { mimeType: 'video/webm; codecs=vp9' };
+    const options = { mimeType: 'video/webm;codecs=H264' };
     mediaRecorder = new MediaRecorder(stream, options);
 
     // Register Event Handlers

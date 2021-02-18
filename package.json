@@ -4,11 +4,16 @@
   "description": "Electron Screen Recorder",
   "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "electron"
   },
   "author": "Curtis",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^9.1.1"
+    "electron": "^9.4.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "electron-reload": "^1.5.0"
   }
 }
